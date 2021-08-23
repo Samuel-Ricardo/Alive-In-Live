@@ -1,7 +1,8 @@
-package com.study.kotlin.aliveinlive
+package com.study.kotlin.aliveinlive.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.study.kotlin.aliveinlive.R
 
 class MainActivity : AppCompatActivity() {
 
