@@ -6,5 +6,7 @@ import retrofit2.Call
 
 interface Repository {
 
-    fun getAllLives(): Response<List<Live>>
+//    fun getAllLives(): Response<List<Live>>
+
+    fun getAllLives(): Call<List<Live>>
 }

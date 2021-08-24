@@ -10,6 +10,9 @@ class MainRepository
     constructor(private val retrofitService: RetrofitService)
     : Repository {
 
+    override fun getAllLives() = retrofitService.getAllLives()
+
+    /*
      override fun getAllLives(): Response<List<Live>> {
 
          val allLives = retrofitService.getAllLives().execute()
@@ -21,4 +24,5 @@ class MainRepository
              allLives.isSuccessful,
          );
      }
+    */
 }
