@@ -18,6 +18,7 @@ class LiveItemAdapte(
 
         val view = LayoutInflater.from(context).inflate(R.layout.live_item, parent, false)
         return LiveItemViewHodler(view);
+
     }
 
     override fun onBindViewHolder(holder: LiveItemViewHodler, position: Int) {
