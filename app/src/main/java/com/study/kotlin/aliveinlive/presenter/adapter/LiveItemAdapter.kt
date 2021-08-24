@@ -25,16 +25,34 @@ class LiveItemAdapte(
 
     override fun onBindViewHolder(holder: LiveItemViewHodler, position: Int) {
 
+        holder.bind(
+            position,
+            liveList,
+            onItemClicked
+        );
+    }
+
+    override fun getItemCount(): Int = liveList.size;
+}
+
+class LiveItemViewHodler (itemView: View): RecyclerView.ViewHolder(itemView) {
+
+    fun bind(
+        position: Int,
+        liveList: List<Live>,
+        onItemClicked: (Live) -> Unit
+    ) {
+
         val live = liveList[position]
 
-        with(holder.itemView){
+        with(this.itemView) {
 
             txtLiveTitle.text = live.title
             txtLiveAuthor.text = live.author
 
             val requestOptions = RequestOptions()
-                    .placeholder(R.drawable.ic_launcher_background)
-                    .error(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_launcher_background)
+                .error(R.drawable.ic_launcher_background)
 
             Glide.with(context)
                 .applyDefaultRequestOptions(requestOptions)
@@ -45,10 +63,5 @@ class LiveItemAdapte(
                 onItemClicked(live)
             }
         }
-
     }
-
-    override fun getItemCount(): Int = liveList.size;
 }
-
-class LiveItemViewHodler (itemView: View): RecyclerView.ViewHolder(itemView)
