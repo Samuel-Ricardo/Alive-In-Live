@@ -11,7 +11,7 @@ import com.study.kotlin.aliveinlive.R
 import com.study.kotlin.aliveinlive.domain.model.Live
 import kotlinx.android.synthetic.main.live_item.view.*
 
-class LiveItemAdapte(
+class LiveItemAdapter(
     private val context: Context,
     private val liveList: List<Live>,
     private val onItemClicked: (Live) -> Unit

@@ -22,6 +22,11 @@ interface RetrofitService: API {
 
             retrofit.create(RetrofitService::class.java)
         }
+
+        fun getInstance(): API {
+
+            return retrofitService;
+        }
     }
 
     override fun getInstance(): API {
