@@ -33,7 +33,16 @@ class MainActivity : AppCompatActivity() {
         setupRecyvlerView()
     }
 
-
+    fun setupViewModel(){
+        viewModel = ViewModelProvider(
+            this,
+            MainViewModelFactory(
+                MainRepository(
+                    api as RetrofitService
+                )
+            )
+        ).get(MainViewModel::class.java)
+    }
 
     fun setupRecyvlerView(){
         rcvLives.layoutManager = LinearLayoutManager(this)
