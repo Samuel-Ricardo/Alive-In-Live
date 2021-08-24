@@ -13,7 +13,7 @@ interface RetrofitService: API {
     override fun getAllLives(): Call<List<Live>>
 
     companion object {
-        private val instance: RetrofitService by lazy {
+        private val retrofitService: RetrofitService by lazy {
 
             val retrofit = Retrofit.Builder()
                 .baseUrl("https://d3c0cr0sze1oo6.cloudfront.net/")
@@ -26,6 +26,6 @@ interface RetrofitService: API {
 
     override fun getInstance(): API {
 
-        return instance;
+        return retrofitService;
     }
 }
