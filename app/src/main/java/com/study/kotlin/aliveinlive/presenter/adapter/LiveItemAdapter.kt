@@ -17,6 +17,14 @@ class LiveItemAdapter(
     private val onItemClicked: (Live) -> Unit
 ): RecyclerView.Adapter<LiveItemViewHodler>() {
 
+    private var lives = mutableListOf<Live>()
+
+    fun setLiveList(lives: List<Live>) {
+
+        this.lives = lives.toMutableList()
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LiveItemViewHodler {
 
         val view = LayoutInflater.from(context).inflate(R.layout.live_item, parent, false)

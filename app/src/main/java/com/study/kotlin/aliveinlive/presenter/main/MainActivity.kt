@@ -1,8 +1,11 @@
 package com.study.kotlin.aliveinlive.presenter.main
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.inputmethod.InputBinding
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.study.kotlin.aliveinlive.R
@@ -17,6 +20,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val TAG = "MainActivity"
+
     lateinit var viewModel: MainViewModel
     private val api: API = RetrofitService.getInstance();
     private var adapter: LiveItemAdapter? = null
@@ -25,6 +30,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setup()
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        viewModel.liveList.observe(this, Observer { lives ->
+
+            Log.d(TAG,"onCreate: $lives")
+            adapter.setL
+        })
     }
 
     fun setup(){
