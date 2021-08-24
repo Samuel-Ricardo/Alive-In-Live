@@ -1,4 +1,4 @@
-package com.study.kotlin.aliveinlive.data
+package com.study.kotlin.aliveinlive.data.repositories
 
 
 import com.study.kotlin.aliveinlive.data.api.RetrofitService
