@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.inputmethod.InputBinding
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,8 +39,19 @@ class MainActivity : AppCompatActivity() {
         viewModel.liveList.observe(this, Observer { lives ->
 
             Log.d(TAG,"onCreate: $lives")
-            adapter.setL
+            adapter?.setLiveList(lives)
         })
+
+        viewModel.errorMessage.observe(
+            this,
+            Observer {message ->
+                Toast.makeText(
+                    this,
+                    message,
+                    Toast.LENGTH_LONG
+                )
+            }
+        )
     }
 
     fun setup(){

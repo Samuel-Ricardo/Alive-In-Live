@@ -17,7 +17,7 @@ class LiveItemAdapter(
     private val onItemClicked: (Live) -> Unit
 ): RecyclerView.Adapter<LiveItemViewHodler>() {
 
-    private var lives = mutableListOf<Live>()
+    private var lives = liveList
 
     fun setLiveList(lives: List<Live>) {
 
@@ -35,7 +35,7 @@ class LiveItemAdapter(
 
         holder.bind(
             position,
-            liveList,
+            lives,
             onItemClicked
         );
     }
