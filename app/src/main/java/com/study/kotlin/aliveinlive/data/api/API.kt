@@ -8,6 +8,8 @@ import retrofit2.http.GET
 
 interface API {
 
+    @GET("lista-live.json")
+    fun getAllLives(): Call<List<Live>>
 
     companion object {
         private val instance: API by lazy {
