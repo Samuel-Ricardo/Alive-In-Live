@@ -13,6 +13,23 @@
         android:margin="10dp"
         />
 
+    <TextView
+        android:id="@+id/txtLiveTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        />
 
+    <TextView
+        android:id="@+id/txtLiveAuthor"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        />
 
 </androidx.cardview.widget.CardView>
