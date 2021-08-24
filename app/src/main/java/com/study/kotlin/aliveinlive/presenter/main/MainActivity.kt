@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.study.kotlin.aliveinlive.R
 import com.study.kotlin.aliveinlive.data.api.RetrofitService
 import com.study.kotlin.aliveinlive.data.repositories.MainRepository
+import com.study.kotlin.aliveinlive.domain.model.Live
 import com.study.kotlin.aliveinlive.interfaces.API
 import com.study.kotlin.aliveinlive.presenter.adapter.LiveItemAdapter
 import com.study.kotlin.aliveinlive.presenter.main.viewmodel.MainViewModel
@@ -18,9 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var viewModel: MainViewModel
     private val api: API = RetrofitService.getInstance();
-    private val adapter: LiveItemAdapter{
-
-    };
+    private var adapter: LiveItemAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +44,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupRecyvlerView(){
-        rcvLives.layoutManager = LinearLayoutManager(this)
+        rcvLives.layoutManager = LinearLayoutManager(this);
+        rcvLives.adapter = setupAdapter();
+    }
+
+    fun setupAdapter(): LiveItemAdapter{
+        adapter = LiveItemAdapter(
+            this,
+            mutableListOf<Live>()
+        ) {
+            onClickItem(it)
+        }
+
+        return adapter as LiveItemAdapter;
+    }
+
+    private fun onClickItem(it: Live) {
+
     }
 }
