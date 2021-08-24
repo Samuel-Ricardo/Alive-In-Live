@@ -1,10 +1,10 @@
 package com.study.kotlin.aliveinlive.presenter.main
 
-import android.os.Build
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.inputmethod.InputBinding
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -92,7 +92,9 @@ class MainActivity : AppCompatActivity() {
         return adapter as LiveItemAdapter;
     }
 
-    private fun onClickItem(it: Live) {
+    private fun onClickItem(live: Live) {
 
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(live.link))
+        startActivity(browserIntent);
     }
 }
