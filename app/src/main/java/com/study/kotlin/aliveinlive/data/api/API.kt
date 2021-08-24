@@ -22,4 +22,9 @@ interface API {
             retrofit.create(API::class.java)
         }
     }
+
+    fun getInstance(): API {
+
+        return instance;
+    }
 }
