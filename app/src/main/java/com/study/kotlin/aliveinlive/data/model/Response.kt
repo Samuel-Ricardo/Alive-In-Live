@@ -1,4 +1,5 @@
 package com.study.kotlin.aliveinlive.data.model
 
-class Response {
-}
+import retrofit2.Call
+
+class Response<T>{}

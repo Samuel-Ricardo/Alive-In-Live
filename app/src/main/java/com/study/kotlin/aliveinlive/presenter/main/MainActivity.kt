@@ -1,4 +1,4 @@
-package com.study.kotlin.aliveinlive.presenter
+package com.study.kotlin.aliveinlive.presenter.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
