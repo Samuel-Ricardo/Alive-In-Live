@@ -1,4 +1,4 @@
-package com.study.kotlin.aliveinlive.presenter.main
+package com.study.kotlin.aliveinlive.presenter.main.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
