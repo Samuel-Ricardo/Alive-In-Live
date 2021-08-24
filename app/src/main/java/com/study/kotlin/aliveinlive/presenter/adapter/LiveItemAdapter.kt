@@ -10,7 +10,7 @@ import com.study.kotlin.aliveinlive.domain.model.Live
 
 class LiveItemAdapte(
     private val context: Context,
-    private val live:Live,
+    private val liveList: List<Live>,
     private val onItemClicked: (Live) -> Unit
 ): RecyclerView.Adapter<LiveItemViewHodler>() {
 
@@ -18,16 +18,13 @@ class LiveItemAdapte(
 
         val view = LayoutInflater.from(context).inflate(R.layout.live_item, parent, false)
         return LiveItemViewHodler(view);
-
     }
 
     override fun onBindViewHolder(holder: LiveItemViewHodler, position: Int) {
-        TODO("Not yet implemented")
+
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = liveList.size;
 }
 
 class LiveItemViewHodler (itemView: View): RecyclerView.ViewHolder(itemView)
