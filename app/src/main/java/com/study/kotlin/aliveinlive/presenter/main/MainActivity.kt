@@ -54,6 +54,12 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        viewModel.getAllLives()
+    }
+
     fun setup(){
         setupViewModel()
         setupRecyvlerView()
